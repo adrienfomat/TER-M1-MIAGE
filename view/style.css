@@ -32,7 +32,7 @@ nav {
             
         }
 
-.fa-solid:hover {
+        .fa-circle-plus:hover {
     
     font-size: 55px;
 }
@@ -112,40 +112,54 @@ nav {
 .colonne-droite .fa-grip-vertical {
     position: absolute;
     top: 60px;
-    left: 80%;
-    font-size: 45px;
+    left: 90%;
+    font-size: 35px;
     cursor: pointer;
 }
 
 
 .menu-vertical {
-    position: absolute;
-    top: 110px;
-    left: 75%;
-    width: 250px;
-    height: 500px;
-    box-sizing: border-box;
+    position: fixed;
+    top: 15%;
+    right: -300px; 
+    width: 300px;
+    height: 50vh;
     background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
-    transition: all 0.3s ease;
-    padding: 10px;
-    overflow-y: auto;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
+
 
 .menu-vertical ul {
     list-style: none;
-    padding: 0;
+    padding: 20px;
 }
 
-.menu-vertical li {
-    padding: 10px;
+.menu-vertical ul li {
+    margin: 15px 0;
     cursor: pointer;
     transition: background-color 0.3s;
+    padding: 10px;
+}
+
+.menu-vertical ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
 }
 
 .menu-vertical li:hover {
     background-color: #ddd;
+}
+
+
+.menu-vertical.active {
+    right: 0; 
+}
+
+.menu-vertical .fa-solid {
+    padding-right: 10px;
 }

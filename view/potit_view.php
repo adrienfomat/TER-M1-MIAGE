@@ -38,19 +38,22 @@
     <div class="section">
     <h4>Post-it partagés</h4>
     </div>
-    <i class="fa-solid fa-grip-vertical" id="menu-toggle"></i>
+    <i class="fa-solid fa-grip-vertical" id="menu-icon"></i>
+
     <div class="menu-vertical" id="vertical-menu">
-            <ul>
-                <li>Option 1</li>
-                <li>Option 2</li>
-                <li>Option 3</li>
-            </ul>
-        </div>
+        <ul>
+            <li><i class="fa-solid fa-house"></i><a href="#">Accueil</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="#">Modifier profil</a></li>
+            <li><i class="fa-solid fa-trash"></i><a href="#">Supprimer compte</a></li>
+            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Deconnexion</a></li>
+        </ul>
+    </div>
+    
     </div>
     
     
        
-    </div>
+    
 
 <script src="script.js"></script>
 </body>
