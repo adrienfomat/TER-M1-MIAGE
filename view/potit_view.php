@@ -2,117 +2,56 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Accueil</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-        }
-
-        nav {
-            background-color: #f4f4f4;
-            padding: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-            padding: 5px 10px;
-        }
-
-        nav a:hover {
-            background-color: #333;
-            color: white;
-            border-radius: 3px;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .welcome-section {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .content-section {
-            margin-top: 30px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    
 </head>
 <body>
-    <header>
-        <h1>Nom de votre site</h1>
-    </header>
+    
+    
 
+    <div class="colonne-gauche">
     <nav>
         <ul>
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="connexion.php">Connexion</a></li>
-            <li><a href="inscription.php">Inscription</a></li>
-            <?php
-            session_start();
-            if(isset($_SESSION['user_id'])) {
-                echo '<li><a href="profil.php">Mon Profil</a></li>';
-                echo '<li><a href="deconnexion.php">Déconnexion</a></li>';
-            }
-            ?>
+        <i class="fa-solid fa-circle-plus"></i>
+           
         </ul>
     </nav>
+    <div class="section">
+    <h4>Mes Post-its</h4>
+    </div>
+        
+        
+    </div>
 
-    <main>
-        <section class="welcome-section">
-            <h2>Bienvenue sur notre site</h2>
-            <p>Découvrez nos services et fonctionnalités</p>
-        </section>
+   
+    <div class="separateur"></div>
 
-        <section class="content-section">
-            <h3>À propos</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-               Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-        </section>
+    
+    <div class="colonne-droite">
+    <div class="section">
+    <h4>Post-it partagés</h4>
+    </div>
+    <i class="fa-solid fa-grip-vertical" id="menu-toggle"></i>
+    <div class="menu-vertical" id="vertical-menu">
+            <ul>
+                <li>Option 1</li>
+                <li>Option 2</li>
+                <li>Option 3</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+       
+    </div>
 
-        <section class="content-section">
-            <h3>Nos services</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-               Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Nom de votre site. Tous droits réservés.</p>
-    </footer>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: white;
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh; /
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    padding: 0 5%;
+}
+
+ .colonne-gauche .fa-circle-plus {
+            margin-top: 25px;
+            font-size: 50px;
+            cursor: pointer; 
+            position: relative; 
+            transition: font-size 0.3s ease; 
+            
+        }
+
+.fa-solid:hover {
+    
+    font-size: 55px;
+}
+
+.fa-circle-plus:hover::after {
+            content: "Ajouter un post-it"; 
+            position: absolute;
+            top: 37%; 
+            left: 300%;
+            transform: translateX(-50%); 
+            background-color: rgba(0, 0, 0, 0.8); 
+            color: white; 
+            padding: 5px 10px; 
+            border-radius: 5px;
+            font-size: 16px; 
+            white-space: nowrap; 
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+        }
+.fa-solid:hover::after {
+            opacity: 1; 
+        }
+
+.colonne-gauche {
+            flex: 1; 
+            padding: 20px;
+        }
+
+        
+        .separateur {
+            width: 2px; 
+            background-color: #ccc; 
+        }
+
+       
+        .colonne-droite {
+            flex: 1; 
+            
+            padding: 20px;
+
+            position: relative;
+        }
+
+.section {
+    position: relative;
+}
+.section h4 {
+
+    text-align: center;
+    
+    border: 2px solid;
+    background-color: orange;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 6px 6px 6px rgb(119, 118, 118) ;
+    padding: 10px 20px; 
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: -85px;
+   
+  
+}
+.colonne-gauche h4 {
+    padding: 15px 40px; 
+}
+
+.colonne-droite h4 {
+    border: 2px solid;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+}
+
+.colonne-droite .fa-grip-vertical {
+    position: absolute;
+    top: 60px;
+    left: 80%;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+
+.menu-vertical {
+    position: absolute;
+    top: 110px;
+    left: 75%;
+    width: 250px;
+    height: 500px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.menu-vertical ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-vertical li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-vertical li:hover {
+    background-color: #ddd;
+}
