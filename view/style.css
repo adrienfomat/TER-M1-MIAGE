@@ -154,3 +154,45 @@ nav {
 .menu-vertical li:hover {
     background-color: #ddd;
 }
+
+
+.menu-vertical.active {
+    right: 0; 
+}
+
+.menu-vertical .fa-solid {
+    padding-right: 10px;
+}
+
+
+
+
+.colonne-gauche .post-it1 {
+    width: calc(50% - 20px); 
+    height: 250px;
+    background-color: yellow;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
+                4px 4px 10px rgba(0, 0, 0, 0.2);
+    transform: rotate(1deg);
+    position: relative;
+    box-sizing: border-box; 
+}
+.colonne-gauche .post-it {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    margin-top: 50px; 
+}
+
+.post-it1 h3 {
+    text-align: center;
+}
+
+.post-it .test {
+    background-color: pink;
+}
+
+.post-it .test2 {
+    background-color: rgb(107, 107, 200);
+}
