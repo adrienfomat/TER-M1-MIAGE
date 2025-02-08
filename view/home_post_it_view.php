@@ -29,7 +29,24 @@
     <h4>Mes Post-its</h4>
     
     </div>
-        
+        <div class="post-it">
+            <div class="post-it1">
+                <h3>Post-it 1</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+            <div class="post-it1 test">
+                <h3>Post-it 2</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+            <div class="post-it1 test2">
+                <h3>Post-it 3</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+            <div class="post-it1">
+                <h3>Post-it 4</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+        </div>
         
     </div>
 
@@ -41,19 +58,22 @@
     <div class="section">
     <h4>Post-it partagés</h4>
     </div>
-    <i class="fa-solid fa-grip-vertical" id="menu-toggle"></i>
+    <i class="fa-solid fa-grip-vertical" id="menu-icon"></i>
+
     <div class="menu-vertical" id="vertical-menu">
-            <ul>
-                <li>Option 1</li>
-                <li>Option 2</li>
-                <li>Option 3</li>
-            </ul>
-        </div>
+        <ul>
+            <li><i class="fa-solid fa-house"></i><a href="#">Accueil</a></li>
+            <li><i class="fa-solid fa-user"></i><a href="#">Modifier profil</a></li>
+            <li><i class="fa-solid fa-trash"></i><a href="#">Supprimer compte</a></li>
+            <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="#">Deconnexion</a></li>
+        </ul>
+    </div>
+    
     </div>
     
     
        
-    </div>
+    
 
 <script src="script.js"></script>
 </body>
