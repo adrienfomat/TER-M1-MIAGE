@@ -29,7 +29,24 @@
     <h4>Mes Post-its</h4>
     
     </div>
-        
+        <div class="post-it">
+            <div class="post-it1">
+                <h3>Post-it 1</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+            <div class="post-it1 test">
+                <h3>Post-it 2</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+            <div class="post-it1 test2">
+                <h3>Post-it 3</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+            <div class="post-it1">
+                <h3>Post-it 4</h3>
+                <p>Contenu du post-it 1</p>
+            </div>
+        </div>
         
     </div>
 
