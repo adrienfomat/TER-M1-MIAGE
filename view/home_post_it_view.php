@@ -1,7 +1,8 @@
 
-    <?php if(session_status() == PHP_SESSION_NONE) {
+<?php 
+        if(session_status() == PHP_SESSION_NONE) {
                 session_start();
-            }   
+        }   
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,7 +25,7 @@
     <div class="colonne-gauche">
     <nav>
         <ul>
-        <a href="create_p.php" title="Créer un nouveau post-it">
+        <a href="create_p_view.php" title="Créer un nouveau post-it">
     <i class="fa-solid fa-circle-plus"></i>
     </a>
            
@@ -69,7 +70,7 @@
         <ul>
             <li><i class="fa-solid fa-house"></i><a href="#">Accueil</a></li>
             <li><i class="fa-solid fa-user"></i><a href="#">Modifier profil</a></li>
-            <li><i class="fa-solid fa-trash"></i><a href="#">Supprimer compte</a></li>
+            <li><i class="fa-solid fa-trash"></i><a href="/TER_MIAGE/control/supprimer_compte.php">Supprimer compte</a></li>
             <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="/TER_MIAGE/control/deconnexion.php">Deconnexion</a></li>
         </ul>
     </div>
@@ -79,9 +80,7 @@
     
     <!-- Ici onnverifie si l'id du navigateur est le meme que celui dans la session sinon deconnexxion-->
     <?php
-        if (isset($_GET['id']) && $_GET['id'] == $_SESSION['idUser']) {
-            echo "<p>Vous êtes connecté</p>";
-        } else {
+        if ( isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
             session_destroy();
             header('Location: /TER_MIAGE/control/deconnexion.php');
             exit();
