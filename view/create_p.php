@@ -28,7 +28,7 @@
         <div class="main-box">
             <div class="box">
                 <div class="titre">
-                    <h1>titre</h1>
+                    <textarea name="" id="" cols="80" rows="5"></textarea>
                     <p><b>27/03/2002</b></p>
                 </div>
                 <div class="contenu">

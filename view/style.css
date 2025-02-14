@@ -201,3 +201,52 @@ a {
     text-decoration: none; 
     color: inherit; 
 }
+
+@media (max-width: 1200px) {
+    .colonne-gauche .post-it1{
+        width: calc(50% - 20px);
+        height: 180px;
+    }
+
+    .menu-vertical ul li a {
+        font-size: 13px;
+    }
+
+    .menu-vertical {
+        width: 250px;
+    }
+
+    .post-it1 h3 {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .post-it1 p {
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .colonne-gauche h4 {
+        font-size: 12px;
+        padding-top:45px;
+        
+    }
+
+    .colonne-droite h4 {
+        font-size: 12px;
+    }
+
+    
+
+
+
+    .colonne-droite .fa-grip-vertical {
+        font-size: 28px;
+    }
+
+    .colonne-gauche .fa-circle-plus{
+        font-size: 40px;
+    }
+
+
+}
