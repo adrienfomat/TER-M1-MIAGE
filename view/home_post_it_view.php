@@ -21,7 +21,9 @@
     <div class="colonne-gauche">
     <nav>
         <ul>
-        <i class="fa-solid fa-circle-plus"></i>
+        <a href="create_p.php" title="Créer un nouveau post-it">
+    <i class="fa-solid fa-circle-plus"></i>
+    </a>
            
         </ul>
     </nav>

@@ -150,16 +150,8 @@ label {
   left: calc(30% - -1000px);
 }
 
-/* .left-bar {
-    width: 1300px;
-    height: 14px;
-    left: calc(50% - 800px);
-    top: 0px;
-    position: absolute;
-    transform: rotate(90deg);
-    transform-origin: 0 0;
-    background: #f9ecd3;
-    box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    border: 4px #424347 solid;
-  } */
+.left-btn .fa-arrow-left {
+
+  top: 0;
+  left: 0;
+}
