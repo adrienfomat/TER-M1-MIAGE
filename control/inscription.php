@@ -1,6 +1,6 @@
 <?php
 session_start(); // Démarrage de la session
-header('Content-Type: application/json'); // Type de contenu JSON
+//header('Content-Type: application/json'); // Type de contenu JSON
 /* Affichage des erreurs */
 ini_set('display_errors', 1); 
 ini_set('display_startup_errors', 1); 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /* Vérification côté serveur : s je javascript est désactivé on force le maintien sur la page inscritption en cas de champ vidde */
     if (empty($nom) || empty($prenom) || empty($pseudo) || empty($password) || empty($email) || empty($date_naissance)) {
         $_SESSION['errors']['verification'] = "Erreur : Un ou plusieurs champs sont vides.";
-        //header('Location: /TER_MIAGE/view/inscription_view.php');
+        header('Location: /TER_MIAGE/view/inscription_view.php');
         //exit();
     }else{
             // Hachage du mot de passe
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $image_path = '/TER_MIAGE/model/image/image1.jpg';
 
         // je verifie si l'email existe deja dans la base de donnees 
-        $requete_email = "SELECT idUser FROM user WHERE  mailuser= ?";
+        $requete_email = "SELECT idUser FROM user WHERE  mailUser= ?";
         $statement = $db_connexion->prepare($requete_email);
         $statement->execute([$email]);
         $response1 = $statement->fetch(); // je recupere l'utilisateur
@@ -61,17 +61,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $valeurs = [$iduser, $nom, $prenom, $pseudo, $email, $date_naissance, $image_path, $password];
             $resultat = $statement->execute($valeurs);
 
+            // redirection vers la page de connexion en cas de succès
+            if ($resultat) {
+                $_SESSION['success'] = "Inscription réussie.";
+                echo 'Inscription réussie.';
+                header('Location: /TER_MIAGE/view/connexion_view.php');
+                exit();
+            } else {
+                $_SESSION['errors']['general'] = "Erreur lors de l'inscription.";
+                echo 'Erreur lors de l\'inscription.';
+                header('Location: /TER_MIAGE/view/inscription_view.php');
+                exit();
+            }
+
         }else if($response1){
             // je met un message d'erreur si l'email existe déja dans  une session pour pouvoir l'afficher dans la page inscription_view
             $_SESSION['errors']['email'] = "Cet email est déjà utilisé.";
-            //header('Location: /TER_MIAGE/view/inscription_view.php');
-            //exit();
-
+            echo 'Cet email est déjà utilisé.';
+            header('Location: /TER_MIAGE/view/inscription_view.php');
+            exit();
         }else if($response2){
             // je met un message d'erreur si le pseudo existe déja dans une session pour pouvoir l'afficher dans la page inscription_view
             $_SESSION['errors']['pseudo'] = "Ce pseudo est déjà utilisé.";
-            //header('Location: /TER_MIAGE/view/inscription_view.php');
-            //exit();
+            echo 'Ce pseudo est déjà utilisé.';
+            header('Location: /TER_MIAGE/view/inscription_view.php');
+            exit();
         }
             
 
@@ -88,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 } else {
     $_SESSION['errors']['general'] = "Aucune donnée reçue.";
-    header('Location: /TER_MIAGE/view/inscription_view.php');
+    //header('Location: /TER_MIAGE/view/inscription_view.php');
     exit();
 }
 ?>

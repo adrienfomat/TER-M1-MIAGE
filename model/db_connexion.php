@@ -2,7 +2,8 @@
 
 /* Fonction Connexion a la base de données */
 function connexion(){
-    $host = "192.168.137.110"; //pour permettre les connexions depuis un autre poste
+    //$host = "192.168.137.110"; //pour permettre les connexions depuis un autre poste
+    $host = 'localhost';
     $dbname = 'TER_DB';
     $username = 'root';
     $password = '';

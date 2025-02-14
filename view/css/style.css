@@ -146,3 +146,7 @@
 .login-btn:hover {
     background-color: #1ea14a;
 }
+
+.inscriptionForm {
+    display: block;
+}

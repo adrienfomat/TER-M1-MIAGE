@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailSuggestions = ["gmail.com", "yahoo.fr", "outlook.com", "hotmail.com"];
     
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+        //event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
 
         let isValid = true;
 
@@ -102,12 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(data => {
                 console.log(data); // Afficher la réponse du serveur dans la console
-                alert("Inscription réussie ! Redirection vers la connexion...?");
-                window.location.href = "/TER_MIAGE/view/connexion_view.php";
+                //alert("Inscription réussie ! Redirection vers la connexion...?");
+                //window.location.href = "/TER_MIAGE/view/connexion_view.php";
             })
             .catch(error => {
                 console.error('Erreur:', error);
-                alert("Erreur lors de l'inscription. Veuillez réessayer.");
+                //alert("Erreur lors de l'inscription. Veuillez réessayer.");
             });
         }
     });

@@ -24,13 +24,13 @@
                     <p class='error'><?= htmlspecialchars($_SESSION['errors']['general']) ?></p>
                 <?php endif; ?>
                 <label for="email">e-mail</label>
-                <input type="email" id="email" name="email" placeholder="Entrez votre e-mail" required  value="<?= htmlspecialchars($_SESSION['user']['email'] ?? '') ?>">
+                <input type="email" id="email" name="email" placeholder="Entrez votre e-mail">
                 <?php if (isset($_SESSION['errors']['email'])): ?>
                     <p class='error'><?= htmlspecialchars($_SESSION['errors']['email']) ?></p>
                 <?php endif; ?>
 
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required value="<?= htmlspecialchars($_SESSION['user']['password'] ?? '') ?>">
+                <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
                 <?php if (isset($_SESSION['errors']['password'])): ?>
                     <p class='error'><?= htmlspecialchars($_SESSION['errors']['password']) ?></p>
                 <?php endif; ?>
