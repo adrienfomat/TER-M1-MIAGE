@@ -25,7 +25,7 @@
     <div class="colonne-gauche">
     <nav>
         <ul>
-        <a href="create_p_view.php" title="Créer un nouveau post-it">
+        <a href="create_post_it_view.php?id=<?php echo $_SESSION['idUser']; ?>" title="Créer un nouveau post-it">
     <i class="fa-solid fa-circle-plus"></i>
     </a>
            
@@ -36,10 +36,20 @@
     
     </div>
         <div class="post-it">
+            <?php 
+                if(isset($_SESSION['postIt'])):
+                    foreach ($_SESSION['postIt'] as $postIt):
+                        
+                    
+            ?>
             <div class="post-it1">
-                <h3>Post-it 1</h3>
-                <p>Contenu du post-it 1</p>
+                <h3><?= htmlspecialchars($postIt['idPostIt']) ?></h3>
+                <p><?= htmlspecialchars($postIt['titrePostIt']) ?></p>
             </div>
+            <?php 
+            endforeach;
+            endif;
+            ?>
             <div class="post-it1 test">
                 <h3>Post-it 2</h3>
                 <p>Contenu du post-it 1</p>

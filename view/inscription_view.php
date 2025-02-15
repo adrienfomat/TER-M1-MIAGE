@@ -51,7 +51,7 @@
                </form>
            </div>
            <div class="login-col">
-               <img src="/TER_MIAGE/model/image/image1.jpg" alt="Illustration avion">
+               <img src="/TER_MIAGE/model/image/image2.jpeg" alt="Illustration avion">
            </div>
        </div>
    </section>

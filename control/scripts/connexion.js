@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         error.style.color = "red";
         error.textContent = message;
         input.parentNode.appendChild(error);
+
     }
 
     function resetErrors() {

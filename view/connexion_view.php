@@ -12,7 +12,7 @@
     <div class="row-page">
         <!-- Colonne Image -->
         <div class="login-col">
-            <img src="/TER_MIAGE/model/image/image1.jpg" alt="Image de connexion"> 
+            <img src="/TER_MIAGE/model/image/image2.jpeg" alt="Image de connexion"> 
         </div>
 
         <!-- Formulaire de connexion -->
