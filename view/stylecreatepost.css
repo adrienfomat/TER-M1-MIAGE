@@ -13,7 +13,7 @@ body {
   padding: 0;
   display: flex;
   height: 100vh;
-
+  position: relative;
   justify-content: center;
   align-items: center;
 }
@@ -21,11 +21,12 @@ body {
 /*Hamza */
 
 .main-box {
-  width: 795.74px;
-  height: 801.32px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  top: 20.29px;
+  
 }
 
 .box {
@@ -57,6 +58,7 @@ body {
   align-items: center;
   height: 300.26px; /*a manipuler*/
   padding: 10px 20px;
+  
 }
 .sharedwith {
   height: 45.26px;
@@ -76,7 +78,7 @@ body {
   justify-content: space-between;
   height: 45.26px;
 }
-label {
+.user {
   padding: 5px 19px;
   background-color: #4caf50;
   color: white;
@@ -150,6 +152,28 @@ label {
   left: calc(30% - -1000px);
 }
 
+.titre1 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.titre2 {
+  display: block;
+  margin-bottom: 10px; 
+  text-align: start;
+  font-size: 20px;
+  font-weight: 700;
+
+}
+.contenu {
+  display: flex;
+  flex-direction: column; 
+}
+
+.contenu textarea {
+  width: 100%; 
+}
+
 .left-btn .fa-arrow-left {
 
   top: 0;
@@ -160,3 +184,36 @@ textarea {
 
   font-size: 15px;
 }
+
+@media (max-width: 1500px) {
+  .box {
+    width: 600px;
+    height: 650px;
+
+  }
+  .color-palette {
+    top: -30%;
+  }
+
+  .color {
+    width: 15px;
+    height: 17px;
+  }
+
+  .titre1 {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 10px;
+  }
+
+  .titre2 {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  ::placeholder {
+    font-size: 12px;
+  }
+  }

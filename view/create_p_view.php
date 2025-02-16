@@ -21,53 +21,51 @@
     
     <div class="left-bar"></div>
    <div class="left-btn">
-   <i class="fa-solid fa-arrow-left"></i>
    </div> 
     
     
-        <div class="main-box">
-            <div class="box">
-                <div class="titre">
-                    <textarea name="" id="" cols="80" rows="5"></textarea>
-                    <p><b>27/03/2002</b></p>
-                </div>
-                <div class="contenu">
-                    <textarea name="" id="" cols="80" rows="10" style="resize: none;"></textarea>
-   
-                </div>
-                <div class="sharedwith"><p>shared with :   </p>
-                    <input type="text" placeholder="Rechercher..." name="search"> </div>
-                <div class="people">    
-                <label for="sharedwith">Fallou
+   <form action="/TER_MIAGE/control/create_post_it.php" method="POST">
+    <div class="main-box">
+        <div class="box">
+            <div class="titre">
+            <label for="title" class="titre1">Titre</label>
+                <input type="text" name="title" id="title" class="form-control" required>
+                <p><b>27/03/2002</b></p>
+            </div>
+            <div class="contenu">
+    <label for="content" class="titre2">Contenu</label>
+    <textarea name="content" id="content" cols="80" rows="10" style="resize: none;"></textarea>
+</div>
+            <div class="sharedwith">
+                <p>Partager avec :</p>
+                <input type="text" placeholder="Rechercher..." name="search">
+            </div>
+            <div class="people">
+                <label for="sharedwith" class="user">Fallou
                     <span class="delete-icon">&times;</span>
                 </label>
-                <label for="sharedwith">Hamza
+                <label for="sharedwith" class="user">Hamza
                     <span class="delete-icon">&times;</span>
                 </label>
-                <label for="sharedwith">Soumaya
+                <label for="sharedwith" class="user">Soumaya
                     <span class="delete-icon">&times;</span>
-                </label></div>
-
-                <div class="bottompostit">
-                    <button class="save-button">SAVE</button>
-    <div class="color-palette">
-        <div class="color" style="background-color: red;" onclick="selectColor(event)"></div>
-        <div class="color" style="background-color: lightcoral;" onclick="selectColor(event)"></div>
-        <div class="color" style="background-color: lightgreen;" onclick="selectColor(event)"></div>
-        <div class="color" style="background-color: brown;" onclick="selectColor(event)"></div>
-        <div class="color" style="background-color: yellow;" onclick="selectColor(event)"></div>
-        <div class="color" style="background-color: darkblue;" onclick="selectColor(event)"></div>
-        <div class="color" style="background-color: lightblue;" onclick="selectColor(event)"></div>
+                </label>
+            </div>
+            <div class="bottompostit">
+                <button type="submit" class="save-button">SAVE</button>
+                <div class="color-palette">
+                    <div class="color" style="background-color: red;" onclick="selectColor(event)"></div>
+                    <div class="color" style="background-color: lightcoral;" onclick="selectColor(event)"></div>
+                    <div class="color" style="background-color: lightgreen;" onclick="selectColor(event)"></div>
+                    <div class="color" style="background-color: brown;" onclick="selectColor(event)"></div>
+                    <div class="color" style="background-color: yellow;" onclick="selectColor(event)"></div>
+                    <div class="color" style="background-color: darkblue;" onclick="selectColor(event)"></div>
+                    <div class="color" style="background-color: lightblue;" onclick="selectColor(event)"></div>
+                </div>
+            </div>
+        </div>
     </div>
-            </div>
-
-            </div>
-
-            <div class="overlay">
-                
-                
-            </div>
-            
+</form>
         </div>
         <div class="right-bar"></div>
         

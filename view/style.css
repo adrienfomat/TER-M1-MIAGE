@@ -202,7 +202,7 @@ a {
     color: inherit; 
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
     .colonne-gauche .post-it1{
         width: calc(50% - 20px);
         height: 180px;
