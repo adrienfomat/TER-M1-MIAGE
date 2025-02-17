@@ -54,13 +54,10 @@
             <div class="bottompostit">
                 <button type="submit" class="save-button">SAVE</button>
                 <div class="color-palette">
-                    <div class="color" style="background-color: red;" onclick="selectColor(event)"></div>
-                    <div class="color" style="background-color: lightcoral;" onclick="selectColor(event)"></div>
-                    <div class="color" style="background-color: lightgreen;" onclick="selectColor(event)"></div>
-                    <div class="color" style="background-color: brown;" onclick="selectColor(event)"></div>
-                    <div class="color" style="background-color: yellow;" onclick="selectColor(event)"></div>
-                    <div class="color" style="background-color: darkblue;" onclick="selectColor(event)"></div>
-                    <div class="color" style="background-color: lightblue;" onclick="selectColor(event)"></div>
+                <div class="form-group">
+                <label for="color">Couleur</label>
+                <input type="color" name="color" id="color" class="form-control" required>
+            </div>
                 </div>
             </div>
         </div>

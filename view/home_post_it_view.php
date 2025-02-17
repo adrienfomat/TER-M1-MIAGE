@@ -40,11 +40,17 @@
                 if(isset($_SESSION['postIt'])):
                     foreach ($_SESSION['postIt'] as $postIt):
                         
+                        
                     
             ?>
             <div class="post-it1">
                 <h3><?= htmlspecialchars($postIt['idPostIt']) ?></h3>
                 <p><?= htmlspecialchars($postIt['titrePostIt']) ?></p>
+                <div class="icon">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <i class="fa-regular fa-eye"></i>
+                <i class="fa-solid fa-trash"></i>
+                </div>
             </div>
             <?php 
             endforeach;
@@ -53,13 +59,17 @@
             <div class="post-it1 test">
                 <h3>Post-it 2</h3>
                 <p>Contenu du post-it 1</p>
+                <div class="icon">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <i class="fa-regular fa-eye"></i>
+                <i class="fa-solid fa-trash"></i>
+                </div>
+        
+                
+
             </div>
-            <div class="post-it1 test2">
-                <h3>Post-it 3</h3>
-                <p>Contenu du post-it 1</p>
-            </div>
-            <div class="post-it1">
-                <h3>Post-it 4</h3>
+            <div class="post-it1" style="background-color: green;">
+                <h3>Post-it 5</h3>
                 <p>Contenu du post-it 1</p>
             </div>
         </div>

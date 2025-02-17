@@ -168,8 +168,8 @@ nav {
 
 
 .colonne-gauche .post-it1 {
-    width: calc(50% - 20px); 
-    height: 250px;
+    width: calc(45% - 5px); 
+    height: 200px;
     background-color: yellow;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
@@ -200,6 +200,22 @@ nav {
 a {
     text-decoration: none; 
     color: inherit; 
+}
+
+.post-it1 {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    top: 80%;
+    left: 70%;
+
+}
+
+.icon .fa-regular, .fa-solid {
+    cursor: pointer;
+    padding: 3px;
 }
 
 @media (max-width: 1500px) {
@@ -248,5 +264,23 @@ a {
         font-size: 40px;
     }
 
+    .icon .fa-regular, .fa-solid {
+        font-size: 12px;
+    }
 
+
+}
+
+@media (max-width: 1300px){
+    .icon .fa-regular, .fa-solid {
+        font-size: 10px;
+        padding: 2px;
+    }
+}
+
+@media (max-width: 875px){
+    .icon .fa-regular, .fa-solid {
+        font-size: 8px;
+        padding: 2px;
+    }
 }
