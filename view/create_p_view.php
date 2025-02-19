@@ -24,7 +24,7 @@
    </div> 
     
     
-   <form action="/TER_MIAGE/control/create_post_it.php" method="POST">
+<form action="/TER_MIAGE/control/create_post_it.php" method="POST">
     <div class="main-box">
         <div class="box">
             <div class="titre">
@@ -33,9 +33,9 @@
                 <p><b>27/03/2002</b></p>
             </div>
             <div class="contenu">
-    <label for="content" class="titre2">Contenu</label>
-    <textarea name="content" id="content" cols="80" rows="10" style="resize: none;"></textarea>
-</div>
+                    <label for="content" class="titre2">Contenu</label>
+                    <textarea name="content" id="content" cols="80" rows="10" style="resize: none;"></textarea>
+            </div>
             <div class="sharedwith">
                 <p>Partager avec :</p>
                 <input type="text" placeholder="Rechercher..." name="search">

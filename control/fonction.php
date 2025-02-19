@@ -46,5 +46,15 @@ function genererIdPostIt($db_connexion) {
     return $newIdPostIt;
 }
 
+/*Fonction pour recuperer les post-it de l'utilisateur */
+
+function getPostIts($idUser, $db_connexion) {
+    $sql = "SELECT idPostIt, titrePostIt, contenuPostIt, couleur FROM `post-it` WHERE idUser = ?";
+    $statement = $db_connexion->prepare($sql);
+    $statement->execute([$idUser]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
 
 ?>
