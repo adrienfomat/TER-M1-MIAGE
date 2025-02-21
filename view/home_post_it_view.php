@@ -1,8 +1,17 @@
 
-<?php 
+<?php
         if(session_status() == PHP_SESSION_NONE) {
-                session_start();
-        }   
+            session_start();
+    }
+
+    /*Ici onnverifie si l'id du navigateur est le meme que celui dans la session sinon deconnexxion*/
+    if ( isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
+        session_destroy();
+        header('Location: /TER_MIAGE/control/deconnexion.php');
+        exit();
+    } else {
+        $_SESSION['idUser'] = $_GET['id']; //je recupere l'id de l'utilisateur connecter et je le met dans la session
+    }       
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,53 +36,34 @@
         <ul>
         <a href="create_post_it_view.php?id=<?= $_SESSION['idUser']; ?>" title="Créer un nouveau post-it">
     <i class="fa-solid fa-circle-plus"></i>
-    </a>
-           
+    </a>          
         </ul>
     </nav>
     <div class="section">
     <h4>Mes Post-its</h4>
     
     </div>
-        <div class="post-it">
-            <?php 
-                if(isset($_SESSION['postIt'])  && !empty($_SESSION['postIt'])):
-                    foreach ($_SESSION['postIt'] as $postIt):
-            ?>
-            <div class="post-it1">
+        <?php 
+                    if(isset($_SESSION['postIt'])  && !empty($_SESSION['postIt'])):
+                        foreach ($_SESSION['postIt'] as $postIt):
+        ?>
+        <div class="post-it1" style="background-color:<?=$postIt['couleur']?>;">
                 <h3><?= htmlspecialchars($postIt['idPostIt']) ?></h3>
                 <p><?= htmlspecialchars($postIt['titrePostIt']) ?></p>
                 <div class="icon">
-                <i class="fa-regular fa-pen-to-square"></i>
-                <i class="fa-regular fa-eye"></i>
-                <i class="fa-solid fa-trash"></i>
+                    <i class="fa-regular fa-pen-to-square"></i>
+                    <a href="/TER_MIAGE/view/inscription_view.php"><i class="fa-regular fa-eye"></i></a>
+                    <i class="fa-solid fa-trash"></i>
                 </div>
             </div>
             <?php 
             endforeach;
             endif;
             ?>
-            <div class="post-it1 test">
-                <h3>Post-it 2</h3>
-                <p>Contenu du post-it 1</p>
-                <div class="icon">
-                <i class="fa-regular fa-pen-to-square"></i>
-                <i class="fa-regular fa-eye"></i>
-                <i class="fa-solid fa-trash"></i>
-                </div>
-        
-                
-
-            </div>
-            <div class="post-it1" style="background-color: green;">
-                <h3>Post-it 5</h3>
-                <p>Contenu du post-it 1</p>
-            </div>
         </div>
         
     </div>
 
-   
     <div class="separateur"></div>
 
     
@@ -94,17 +84,5 @@
     
     </div>
     
-    
-    <!-- Ici onnverifie si l'id du navigateur est le meme que celui dans la session sinon deconnexxion-->
-    <?php
-        if ( isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
-            session_destroy();
-            header('Location: /TER_MIAGE/control/deconnexion.php');
-            exit();
-        }
-    ?>
-    
-
-<script src="script.js"></script>
 </body>
 </html>
