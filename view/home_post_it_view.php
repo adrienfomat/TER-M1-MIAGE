@@ -41,23 +41,7 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
             <h4>Mes Post-its</h4>
         </div>
         <div class="post-it" id="postItList">
-            <?php 
-            if (isset($_SESSION['postIt']) && !empty($_SESSION['postIt'])):
-                foreach ($_SESSION['postIt'] as $postIt):
-            ?>
-                    <div class="post-it1" style="background-color: <?= htmlspecialchars($postIt['couleur']) ?>">
-                        <h3><?= htmlspecialchars($postIt['idPostIt']) ?></h3>
-                        <p><?= htmlspecialchars($postIt['titrePostIt']) ?></p>
-                        <div class="icon">
-                            <a href="/TER_MIAGE/view/inscription_view.php"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <a href="/TER_MIAGE/view/connexion_view.php"><i class="fa-regular fa-eye"></i></a>
-                            <a href="/TER_MIAGE/control/delete_post_it.php?idPostIt=<?= htmlspecialchars($postIt['idPostIt']) ?>&id=<?= $_SESSION['idUser']; ?>" title="Supprimer"><i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-            <?php 
-                endforeach;
-            endif;
-            ?>
+            <!-- Les post-its sont chargés ici par get_post_its.php donc on n'a plus besoin de le faire en php dans ce fichier -->
         </div>
     </div>
 <!-- Mes post its end -->
@@ -90,6 +74,7 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
 
 <!-- Script pour rafraîchir les post-its toutes les 2 secondes -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
     <script>
         function loadPostIts() {
             $('#postItList').load('/TER_MIAGE/control/get_post_its.php');
@@ -97,10 +82,10 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
 
         $(document).ready(function() {
             loadPostIts();
-            setInterval(loadPostIts, 2000); // Rafraîchir toutes les 5 secondes(c'st un peu lourd pour un serveur mais je met 2 pour rapiement tester )
-
+            setInterval(loadPostIts, 2000); // Rafraîchir toutes les 2 secondes
         });
     </script>
 <!-- Fin du script -->
+
 </body>
 </html>
