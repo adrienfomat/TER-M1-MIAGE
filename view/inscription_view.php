@@ -21,7 +21,7 @@
                    <?php if (isset($_SESSION['errors']['email'])): ?>
                     <p class='error'><?= htmlspecialchars($_SESSION['errors']['email']) ?></p>
                   <?php endif; ?>
-               <form  id="inscriptionForm" action="/TER_MIAGE/control/inscription.php" method="POST">
+               <form  id="inscriptionForm" action="" method="POST">
                    <h1>INSCRIPTION</h1>
                    <?php if (isset($_SESSION['errors']['verification'])): ?>
                     <p class='error'><?= htmlspecialchars($_SESSION['errors']['verification']) ?></p>

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // Vérification de la date de naissance
+        // Vérification du nom
         if (nom.length < 1) {
             showError(nomField, "Le nom ne doit pas être vide.");
             isValid = false;
@@ -90,7 +90,29 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!dateRegex.test(dateNaissance)) {
             showError(dateNaissanceField, "Veuillez entrer une date de naissance au format AAAA-MM-JJ.");
             isValid = false;
+        } else {
+            const dateParts = dateNaissance.split("-");
+            const year = parseInt(dateParts[0], 10);
+            const month = parseInt(dateParts[1], 10);
+            const day = parseInt(dateParts[2], 10);
+            const date = new Date(year, month - 1, day);
+
+            if (date.getFullYear() !== year || date.getMonth() + 1 !== month || date.getDate() !== day) {
+                showError(dateNaissanceField, "Veuillez entrer une date de naissance valide.");
+                isValid = false;
+            } else {
+                const daysInMonth = new Date(year, month, 0).getDate();
+                if (day < 1 || day > daysInMonth) {
+                    showError(dateNaissanceField, `Le jour doit être compris entre 1 et ${daysInMonth} pour le mois ${month}.`);
+                    isValid = false;
+                }
+            }
         }
+
+        // Empêcher l'envoi du formulaire si des erreurs sont présentes
+            //if (!isValid) {
+             //   event.preventDefault();
+          //  }
         
         /* Envoi du formulaire  si tout les champs sont bon*/
         if (isValid) {
@@ -110,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 //alert("Erreur lors de l'inscription. Veuillez réessayer.");
             });
         }
+
     });
 
     // Fonction pour afficher un message d'erreur sous un champ
