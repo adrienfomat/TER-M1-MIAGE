@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Vérification côté serveur 
-    if(!empty($title) && !empty($content) && !empty($color)) {
+    if(!empty($title) && !empty($content) && !empty($color) && strlen($title) <= 15 && strlen($content) <= 150) {
             // Connexion à la base de données
             $db_connexion = connexion();
 
@@ -38,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
             // Vérification de l'insertion
             if($statement->rowCount() > 0) {
-                var_dump($selectedUsers);
+                //var_dump($selectedUsers);
                  // Insertion des post it  partagés
                     foreach ($selectedUsers as $username) {
                     $requete = "SELECT idUser FROM user WHERE pseudoUser = ?";
@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     $statement->execute([$username]);
                     $user = $statement->fetch(PDO::FETCH_ASSOC);
                     if ($user) {
-                        var_dump($user);
+                        //var_dump($user);
                         $idSharedPostIt = genererIdSharedPostIt($db_connexion); // Génération de l'identifiant de post-it partagé
                         $requete = "INSERT INTO `post-it-partager` (idPostItShare, idPostIt, idUser, datePartage) VALUES (?, ?, ?, NOW())";
                         $statement = $db_connexion->prepare($requete);
@@ -60,7 +60,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['errors']['insert'] = "Erreur lors de l'insertion du post-it.";
                 header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
             }
-    } else {
+    }elseif ( strlen($title) > 15 && strlen($content) > 150) {
+        $_SESSION['errors']['verification'] = "Erreur : Le titre et le contenu doivent être inférieurs à 15 et 150 caractères respectivement.";
+        header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
+        exit();
+    }else {
         $_SESSION['errors']['verification'] = "Erreur : Un ou plusieurs champs sont vides.";
         header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
         exit();

@@ -17,7 +17,7 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/TER_MIAGE/view/css/style_home_page.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,26 +74,8 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
 
 <!-- Script pour rafraîchir les post-its toutes les 2 secondes -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
-    <script>
-        // Fonction pour rafraîchir les post-its
-        function loadPostIts() {
-            $('#postItList').load('/TER_MIAGE/control/get_post_its.php');
-        }
-
-        // Fonction pour rafraîchir les post-its partagés
-        function loadSharedPostIts() {
-            $('#sharedPostItList').load('/TER_MIAGE/control/get_post_its_share.php');
-        }
-
-        // Rafraîchir les post-its toutes les 2 secondes
-        $(document).ready(function() {
-            loadPostIts();
-            loadSharedPostIts();
-            setInterval(loadPostIts, 2000); // Rafraîchir toutes les 2 secondes
-            setInterval(loadSharedPostIts, 2000); // Rafraîchir les post-its partagés toutes les 2 secondes
-        });
-    </script>
+    <script src="/TER_MIAGE/control/scripts/script.js"></script>
+    <script src="/TER_MIAGE/control/scripts/home_post_it_jquery.js"></script>
 <!-- Fin du script -->
 
 </body>

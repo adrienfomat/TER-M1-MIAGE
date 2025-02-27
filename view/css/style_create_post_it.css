@@ -1,3 +1,41 @@
+
+/* Syle pour l'affichage des utilisateurs lors de la création d'un post-it */
+.user-item {
+    padding: 5px;
+    cursor: pointer;
+}
+.user-item:hover {
+    background-color: #f0f0f0;
+}
+.user-list {
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+}
+.people .user {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+.delete-icon {
+    cursor: pointer;
+    margin-left: 5px;
+    color: red;
+}
+
+
+
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +82,7 @@ body {
   opacity: 0.06;
 }
 .titre {
-  height: 190.26px; /*a manipuler*/
+  height: 190.26px; 
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
@@ -54,7 +92,7 @@ body {
   display: flex;
 
   align-items: center;
-  height: 300.26px; /*a manipuler*/
+  height: 300.26px; 
   padding: 10px 20px;
   
 }
@@ -81,7 +119,7 @@ body {
   background-color: #4caf50;
   color: white;
   font-size: 16px;
-  border-radius: 25px; /* Makes the label rounded */
+  border-radius: 25px; 
   cursor: pointer;
   margin-right: 10px;
 }

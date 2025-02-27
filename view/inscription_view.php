@@ -56,6 +56,7 @@
        </div>
    </section>
    <script src="/TER_MIAGE/control/scripts/inscription.js"></script>
+
 </body>
 </html>
 
