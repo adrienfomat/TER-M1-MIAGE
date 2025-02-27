@@ -127,28 +127,7 @@ body {
   border: 2px solid black;
 }
 
-.left-bar {
-  border-left: 2px solid #000;
-  height: 100%;
-  background: #f9ecd3;
-  box-shadow: -8px 0px 3px rgba(1, 0, 0, 0.2);
-  border-radius: 20px;
-  border: 4px #424347 solid;
-  width: 13px;
-  position: absolute;
-  left: calc(30% - 300px);
-}
-.right-bar {
-  border-left: 2px solid #000;
-  height: 100%;
-  background: #f9ecd3;
-  box-shadow: -8px 0px 3px rgba(1, 0, 0, 0.2);
-  border-radius: 20px;
-  border: 4px #424347 solid;
-  width: 13px;
-  position: absolute;
-  left: calc(30% - -1000px);
-}
+
 
 .titre1 {
   font-size: 20px;

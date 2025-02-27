@@ -68,7 +68,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC); // On récupère les utilisateu
     </style>
 </head>
 <body>
-    <div class="left-bar"></div>
+    
     <div class="left-btn"></div> 
 <!-- Formulaire de création de post-it start -->
     <form action="/TER_MIAGE/control/create_post_it.php" method="POST">

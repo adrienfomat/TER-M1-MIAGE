@@ -3,7 +3,4 @@ document.getElementById('menu-icon').addEventListener('click', function() {
     menu.classList.toggle('active');
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 2b91626 (v5)
