@@ -18,7 +18,12 @@
         $statement->execute([$idPostIt, $idUser]);
 
         if ($statement->rowCount() > 0) {
-            // on supprime le post-it
+            //je supprime les partages du post-it
+            $requete_Delete = "DELETE FROM `post-it-partager` WHERE idPostIt = ?";
+            $statement = $db_connexion->prepare($requete_Delete);
+            $statement->execute([$idPostIt]);
+
+            // Ensuitte on supprime le post-it
             $requete_Delete = "DELETE FROM `post-it` WHERE idPostIt = ?";
             $statement = $db_connexion->prepare($requete_Delete);
             if ($statement->execute([$idPostIt])) {

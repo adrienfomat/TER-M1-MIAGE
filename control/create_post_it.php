@@ -12,6 +12,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $content = htmlspecialchars(trim($_POST['content']));
     $color = htmlspecialchars(trim($_POST['color']));
     $idUser = $_SESSION['idUser'];
+    $selectedUsers = isset($_POST['selectedUsers']) ? explode(',', $_POST['selectedUsers']) : []; // Récupération des utilisateurs sélectionnés
+    
 
     // changement de la couleur noir car cela ne s'affiche pas avec un ecrire en noir sur fond noir / on ne peut donc pas refaire tout un scrip pour ca . je vais juste changer la couleur par defaut en bleu
     if($color == "#000000") {
@@ -36,10 +38,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     
             // Vérification de l'insertion
             if($statement->rowCount() > 0) {
-                
+                var_dump($selectedUsers);
+                 // Insertion des post it  partagés
+                    foreach ($selectedUsers as $username) {
+                    $requete = "SELECT idUser FROM user WHERE pseudoUser = ?";
+                    $statement = $db_connexion->prepare($requete);
+                    $statement->execute([$username]);
+                    $user = $statement->fetch(PDO::FETCH_ASSOC);
+                    if ($user) {
+                        var_dump($user);
+                        $idSharedPostIt = genererIdSharedPostIt($db_connexion); // Génération de l'identifiant de post-it partagé
+                        $requete = "INSERT INTO `post-it-partager` (idPostItShare, idPostIt, idUser, datePartage) VALUES (?, ?, ?, NOW())";
+                        $statement = $db_connexion->prepare($requete);
+                        $statement->execute([$idSharedPostIt, $idPostIt, $user['idUser']]);
+                    }
+                }
                 // Redirection vers la page d'accueil
                 header('Location: /TER_MIAGE/view/home_post_it_view.php?id=' . $idUser);
             } else {
+                // Stocker un message d'erreur si l'insertion a échoué
+                $_SESSION['errors']['insert'] = "Erreur lors de l'insertion du post-it.";
                 header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
             }
     } else {

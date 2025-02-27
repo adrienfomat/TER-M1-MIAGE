@@ -16,7 +16,7 @@ function genererIdUtilisateur($db_connexion) {
     // Si un identifiant existe déjà, on l'incrémente
     if ($lastIdUser) {
         $num = (int)substr($lastIdUser, 2) + 1; 
-        $newIdUser = 'US' . str_pad($num, 3, '0', STR_PAD_LEFT);
+        $newIdUser = 'US' . str_pad($num, 3, '0', STR_PAD_LEFT); //
     } else {
         // Sinon, on commence avec 'US001'
         $newIdUser = 'US001';
@@ -46,10 +46,38 @@ function genererIdPostIt($db_connexion) {
     return $newIdPostIt;
 }
 
+/*Fontion pour generer un nouvel identifiant de post-it partagé */
+function genererIdSharedPostIt($db_connexion) {
+    // Requête pour récupérer le dernier identifiant de post-it partagé
+    $sql = "SELECT idPostItShare FROM `post-it-partager` ORDER BY idPostItShare DESC LIMIT 1";
+    $statement = $db_connexion->query($sql);
+    $lastIdSharedPostIt = $statement->fetchColumn();
+
+    // Si un identifiant existe déjà, on l'incrémente
+    if ($lastIdSharedPostIt) {
+        $num = (int)substr($lastIdSharedPostIt, 10) + 1;
+        $newIdSharedPostIt = 'SharedPost' . str_pad($num, 3, '0', STR_PAD_LEFT);
+    } else {
+        // Sinon, on commence avec 'SharedPost001'
+        $newIdSharedPostIt = 'SharedPost001';
+    }
+
+    return $newIdSharedPostIt;
+}
+
+
 /*Fonction pour recuperer les post-it de l'utilisateur */
 
 function getPostIts($idUser, $db_connexion) {
     $sql = "SELECT idPostIt, titrePostIt, contenuPostIt, couleur FROM `post-it` WHERE idUser = ?";
+    $statement = $db_connexion->prepare($sql);
+    $statement->execute([$idUser]);
+    return $statement->fetchAll(PDO::FETCH_ASSOC);
+}
+
+/* Fonction pour récupérer les post-it partagés avec l'utilisateur */
+function getSharedPostIts($idUser, $db_connexion) {
+    $sql = "SELECT p.idPostIt, p.titrePostIt, p.contenuPostIt, p.couleur FROM `post-it` p JOIN `post-it-partager` sp ON p.idPostIt = sp.idPostIt WHERE sp.idUser = ?";
     $statement = $db_connexion->prepare($sql);
     $statement->execute([$idUser]);
     return $statement->fetchAll(PDO::FETCH_ASSOC);

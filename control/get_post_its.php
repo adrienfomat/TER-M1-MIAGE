@@ -1,5 +1,7 @@
 <?php 
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     require_once __DIR__ . '/../model/db_connexion.php'; // Connexion à la base de données
     require_once __DIR__ . '/fonction.php'; // Appel des fonctions
 
@@ -22,6 +24,6 @@
             echo '</div>';
         }
     } else {
-        echo 'Utilisateur non connecté.';
+        echo 'Pas de post it cree.';
     }
 ?>

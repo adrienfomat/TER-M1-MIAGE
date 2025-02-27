@@ -41,7 +41,7 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
             <h4>Mes Post-its</h4>
         </div>
         <div class="post-it" id="postItList">
-            <!-- Les post-its sont chargés ici par get_post_its.php donc on n'a plus besoin de le faire en php dans ce fichier -->
+            <!-- Les post-its sont chargés ici par get_post_its.php -->
         </div>
     </div>
 <!-- Mes post its end -->
@@ -54,7 +54,7 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
             <h4>Post-it partagés</h4>
         </div>
         <div class="post-it" id="sharedPostItList">
-            <!-- Les post-its partagés seront chargés ici -->
+            <!-- Les post-its partagés sont chargés ici par get_post_its_share.php   -->
         </div>
 <!-- Post-it partagés end -->
 
@@ -76,13 +76,22 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
     <script>
+        // Fonction pour rafraîchir les post-its
         function loadPostIts() {
             $('#postItList').load('/TER_MIAGE/control/get_post_its.php');
         }
 
+        // Fonction pour rafraîchir les post-its partagés
+        function loadSharedPostIts() {
+            $('#sharedPostItList').load('/TER_MIAGE/control/get_post_its_share.php');
+        }
+
+        // Rafraîchir les post-its toutes les 2 secondes
         $(document).ready(function() {
             loadPostIts();
+            loadSharedPostIts();
             setInterval(loadPostIts, 2000); // Rafraîchir toutes les 2 secondes
+            setInterval(loadSharedPostIts, 2000); // Rafraîchir les post-its partagés toutes les 2 secondes
         });
     </script>
 <!-- Fin du script -->
