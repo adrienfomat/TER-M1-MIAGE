@@ -63,7 +63,7 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
         <div class="menu-vertical" id="vertical-menu">
             <ul>
                 <li><i class="fa-solid fa-house"></i><a href="#">Accueil</a></li>
-                <li><i class="fa-solid fa-user"></i><a href="#">Modifier profil</a></li>
+                <li><i class="fa-solid fa-user"></i><a href="/TER_MIAGE/view/profil_management.php">Modifier profil</a></li>
                 <li><i class="fa-solid fa-trash"></i><a href="/TER_MIAGE/control/supprimer_compte.php">Supprimer compte</a></li>
                 <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="/TER_MIAGE/control/deconnexion.php">Deconnexion</a></li>
             </ul>

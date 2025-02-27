@@ -111,9 +111,7 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC); // On récupère les utilisateu
                 </div>
             </div>
         </div>
-    </form>
-<!-- Formulaire de création de post-it end -->
-    <div class="right-bar"></div>
+
 
     <!-- Script pour la recherche d'utilisateurs et la sélection starts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

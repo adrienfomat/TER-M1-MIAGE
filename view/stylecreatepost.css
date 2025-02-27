@@ -215,3 +215,24 @@ textarea {
     font-size: 12px;
   }
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  .closebt {
+    padding: 10px 10px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    text-decoration-line: none;
+    
+    border-radius: 5px;
+  }
+
+  .titre3 {
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 13px;
+  }
