@@ -6,7 +6,7 @@ function connexion(){
     $host = 'localhost';
     $dbname = 'TER_DB';
     $username = 'root';
-    $password = '';
+    $password = 'root';
     
     try {
         $db_connexion = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
