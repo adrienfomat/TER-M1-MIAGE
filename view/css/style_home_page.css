@@ -289,7 +289,6 @@ a {
 .colonne-droite .post-it2 {
     width: calc(45% - 5px); 
     height: 200px;
-    background-color: yellow;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
                 4px 4px 10px rgba(0, 0, 0, 0.2);

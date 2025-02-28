@@ -11,9 +11,9 @@ if (isset($_SESSION['idUser'])) {
     $sharedPostIts = getSharedPostIts($idUser, $db_connexion);
 
     foreach ($sharedPostIts as $postIt) {
-        echo '<div class="post-it1" style="background-color: ' . htmlspecialchars($postIt['couleur']) . '">';
-        echo '<h3>' . htmlspecialchars($postIt['idPostIt']) . '</h3>';
-        echo '<p>' . htmlspecialchars($postIt['titrePostIt']) . '</p>';
+        echo '<div class="post-it2" style="background-color: ' . htmlspecialchars($postIt['couleur']) . '">';
+        echo '<h3>' . htmlspecialchars($postIt['titrePostIt']) . '</h3>';
+        echo '<p>' . htmlspecialchars($postIt['contenuPostIt']) . '</p>';
         echo '<div class="icon">';
         echo '<a href="/TER_MIAGE/view/connexion_view.php"><i class="fa-regular fa-eye"></i></a>';
         echo '</div>';
