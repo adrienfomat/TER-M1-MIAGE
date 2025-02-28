@@ -290,6 +290,7 @@ a {
     width: calc(45% - 5px); 
     height: 200px;
     padding: 20px;
+    background-color: yellow;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
                 4px 4px 10px rgba(0, 0, 0, 0.2);
     transform: rotate(1deg);
