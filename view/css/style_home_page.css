@@ -295,6 +295,7 @@ a {
     transform: rotate(1deg);
     position: relative;
     box-sizing: border-box; 
+    margin-top: 60px;
 }
 .colonne-droite .post-it_part {
     display: flex;

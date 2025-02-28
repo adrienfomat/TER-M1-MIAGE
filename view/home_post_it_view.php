@@ -54,13 +54,20 @@ if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
             <h4>Post-it partagés</h4>
                
         </div>
-        <div class="post-it_part" id="sharedPostItList">
-
+        <div class="post-it_part" id="sharedPostItLis">
+        
             <div class="post-it2">
                 <h3>Post-it partagé</h3>
                 <p>Contenu du post-it partagé</p>
-                <div class="icon">
-                   
+                <div class="icon">   
+            </div>
+            <!-- Les post-its partagés sont chargés ici par get_post_its_share.php   -->
+        </div>
+
+        <div class="post-it2">
+                <h3>Post-it partagé</h3>
+                <p>Contenu du post-it partagé</p>
+                <div class="icon">   
             </div>
             <!-- Les post-its partagés sont chargés ici par get_post_its_share.php   -->
         </div>
