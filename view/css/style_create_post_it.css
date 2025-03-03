@@ -206,8 +206,24 @@ textarea {
     height: 650px;
 
   }
-  .color-palette {
-    top: -30%;
+ 
+
+  .bottompostit {
+    position: relative;
+  }
+
+  .save-button {
+    position: absolute;
+    bottom: 320px;
+    
+  }
+
+  .color-palette{
+    position: absolute;
+    bottom: 310px;
+    left: 450px;
+    
+    
   }
 
   .color {

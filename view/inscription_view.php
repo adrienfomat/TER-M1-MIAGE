@@ -11,7 +11,7 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
    <title>Page login/signup</title>
 </head>
-<body class="login-page">
+<body class="sign-page">
    <section class="login">
        <div class="row-page">
            <div class="login-col-input signup">
@@ -44,9 +44,7 @@
                    <h6 class="inscrit">Vous avez déjà un compte? <a href="/TER_MIAGE/view/connexion_view.php">Connectez-vous </a></h6>
                </form>
            </div>
-           <div class="login-col">
-               <img src="/TER_MIAGE/model/image/image2.jpeg" alt="Illustration avion">
-           </div>
+          
        </div>
    </section>
    <script src="/TER_MIAGE/control/scripts/inscription.js"></script>

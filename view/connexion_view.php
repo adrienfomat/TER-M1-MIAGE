@@ -7,13 +7,14 @@
     <title>Connexion</title>
     <link rel="stylesheet" href="/TER_MIAGE/view/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="login-page">
     <div class="row-page">
         <!-- Colonne Image -->
-        <div class="login-col">
-            <img src="/TER_MIAGE/model/image/image2.jpeg" alt="Image de connexion"> 
-        </div>
+        
 
         <!-- Formulaire de connexion -->
         <div class="login-col-input">
