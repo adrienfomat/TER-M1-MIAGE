@@ -16,9 +16,9 @@ require_once __DIR__ . '/../model/db_connexion.php'; // Connexion à la base de 
 $db_connexion = connexion();
 
 // Récupération de tout les utilisateurs de la base de données pour le partage
-$requete = "SELECT pseudoUser FROM user WHERE idUser != ?";
+$requete = "SELECT pseudoUser FROM user WHERE idUser != ?";// On exclut l'utilisateur connecté de la liste des utilisateurs
 $statement = $db_connexion->prepare($requete);
-$statement->execute([$_SESSION['idUser']]);// On exclut l'utilisateur connecté de la liste des utilisateurs
+$statement->execute([$_SESSION['idUser']]);
 $users = $statement->fetchAll(PDO::FETCH_ASSOC); // On récupère les utilisateurs sous forme de tableau associatif
 
 ?>

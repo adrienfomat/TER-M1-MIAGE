@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const emailSuggestions = ["gmail.com", "yahoo.fr", "outlook.com", "hotmail.com"];
     
     form.addEventListener("submit", function (event) {
-        //event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
+        event.preventDefault(); // Empêcher l'envoi du formulaire par défaut
 
-        let isValid = true;
+        let isValid;
 
         // Réinitialisation des erreurs
         document.querySelectorAll(".error-message").forEach(el => el.remove());
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Vérification de l'adresse email
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!emailRegex.test(email)) {
+        if (!emailRegex.test(email)) {// On exclut l'utilisateur connecté de la liste des utilisateurs
             let suggestionMessage = "Veuillez entrer une adresse email valide. Suggestions: ";
             suggestionMessage += emailSuggestions.map(domain => email.split("@")[0] + "@" + domain).join(", ");
             showError(emailField, suggestionMessage);

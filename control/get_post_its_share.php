@@ -12,10 +12,10 @@ if (isset($_SESSION['idUser'])) {
 
     foreach ($sharedPostIts as $postIt) {
         echo '<div class="post-it2" style="background-color: ' . htmlspecialchars($postIt['couleur']) . '">';
-        echo '<h3>' . htmlspecialchars($postIt['titrePostIt']) . '</h3>';
-        echo '<p>' . htmlspecialchars($postIt['contenuPostIt']) . '</p>';
+        echo '<h3>' . htmlspecialchars($postIt['idPostIt']) . '</h3>';
+        echo '<p>' . htmlspecialchars($postIt['titrePostIt']) . '</p>';
         echo '<div class="icon">';
-        echo '<a href="/TER_MIAGE/view/connexion_view.php"><i class="fa-regular fa-eye"></i></a>';
+        echo '<a href=""><i class="fa-regular fa-eye"></i></a>';
         echo '</div>';
         echo '</div>';
     }

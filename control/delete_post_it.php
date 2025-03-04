@@ -23,7 +23,7 @@
             $statement = $db_connexion->prepare($requete_Delete);
             $statement->execute([$idPostIt]);
 
-            // Ensuitte on supprime le post-it
+            // Ensuite on supprime le post-it
             $requete_Delete = "DELETE FROM `post-it` WHERE idPostIt = ?";
             $statement = $db_connexion->prepare($requete_Delete);
             if ($statement->execute([$idPostIt])) {

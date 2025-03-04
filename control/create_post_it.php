@@ -7,7 +7,7 @@ require_once __DIR__ . '/../control/fonction.php'; // Appel des fonctions
 require_once __DIR__ . '/../model/db_connexion.php'; // Appel de la connexion à la base de données
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupération des données du formulaire
+    // Récupération des données du formulaire de création de post-it
     $title = htmlspecialchars(trim($_POST['title']));
     $content = htmlspecialchars(trim($_POST['content']));
     $color = htmlspecialchars(trim($_POST['color']));
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Vérification côté serveur 
-    if(!empty($title) && !empty($content) && !empty($color) && strlen($title) <= 15 && strlen($content) <= 150) {
+    if(!empty($title) && !empty($content) && strlen($title) <= 15 && strlen($content) <= 150) {
             // Connexion à la base de données
             $db_connexion = connexion();
 
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['errors']['verification'] = "Erreur : Le titre et le contenu doivent être inférieurs à 15 et 150 caractères respectivement.";
         header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
         exit();
-    }else {
+    }else if (empty($title) || empty($content)) {
         $_SESSION['errors']['verification'] = "Erreur : Un ou plusieurs champs sont vides.";
         header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
         exit();
