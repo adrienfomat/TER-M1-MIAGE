@@ -18,11 +18,11 @@
             echo '<h3>' . htmlspecialchars($postIt['idPostIt']) . '</h3>';
             echo '<p>' . htmlspecialchars($postIt['titrePostIt']) . '</p>';
             echo '<div class="icon">';
-            echo '<i class="fa-regular fa-pen-to-square"></i>';
+            echo '<a href="/TER_MIAGE/view/edit_post_it_view.php?idPostIt=' . htmlspecialchars($postIt['idPostIt']) . '&id=' . $_SESSION['idUser'] . '" title="Editer"><i class="fa-regular fa-pen-to-square"></i></a>';
             echo '<a href="/TER_MIAGE/view/view_post_it.php?idPostIt=' . htmlspecialchars($postIt['idPostIt']) . '&id=' . $_SESSION['idUser'] . '" title="Visualiser"><i class="fa-regular fa-eye"></i></a>';
             echo '<a href="/TER_MIAGE/control/delete_post_it.php?idPostIt=' . htmlspecialchars($postIt['idPostIt']) . '&id=' . $_SESSION['idUser'] . '" title="Supprimer"><i class="fa-solid fa-trash"></i></a>';
             echo '</div>';
-            echo '</div>';
+            echo '</div>'; 
         }
     } else {
         echo 'Pas de post it cree.';

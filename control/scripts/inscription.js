@@ -124,12 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.text())
             .then(data => {
                 console.log(data); // Afficher la réponse du serveur dans la console
-                //alert("Inscription réussie ! Redirection vers la connexion...?");
-                //window.location.href = "/TER_MIAGE/view/connexion_view.php";
+                alert("Inscription réussie ! Redirection vers la connexion...?");
+                window.location.href = "/TER_MIAGE/view/connexion_view.php";
             })
             .catch(error => {
                 console.error('Erreur:', error);
-                //alert("Erreur lors de l'inscription. Veuillez réessayer.");
+                alert("Erreur lors de l'inscription. Veuillez réessayer.");
             });
         }
 

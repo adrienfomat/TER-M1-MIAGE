@@ -15,7 +15,7 @@
    <section class="login">
        <div class="row-page">
            <div class="login-col-input signup">
-               <form  id="inscriptionForm">
+               <form  id="inscriptionForm"action="/TER_MIAGE/control/inscription.php" method="POST">
                    <h1>INSCRIPTION</h1>
                    <?php if (isset($_SESSION['errors']['verification'])): ?>
                     <p class='error'><?= htmlspecialchars($_SESSION['errors']['verification']) ?></p>

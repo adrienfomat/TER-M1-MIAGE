@@ -20,10 +20,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $color = "#0000FF";
     }
 
+    var_dump($color);
+
     // Vérification côté serveur 
     if(!empty($title) && !empty($content) && strlen($title) <= 15 && strlen($content) <= 150) {
             // Connexion à la base de données
             $db_connexion = connexion();
+            var_dump($title);
+
+            
 
             // Génération de l'identifiant post-it
             $idPostIt = genererIdPostIt($db_connexion);
@@ -37,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $statement->execute([$idPostIt, $title, $content, $color, $idUser]);
     
             // Vérification de l'insertion
-            if($statement->rowCount() > 0) {
+            if($statement->rowCount() > 0 ) {
                 //var_dump($selectedUsers);
                  // Insertion des post it  partagés
                     foreach ($selectedUsers as $username) {
@@ -46,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     $statement->execute([$username]);
                     $user = $statement->fetch(PDO::FETCH_ASSOC);
                     if ($user) {
-                        //var_dump($user);
+                        var_dump($user);
                         $idSharedPostIt = genererIdSharedPostIt($db_connexion); // Génération de l'identifiant de post-it partagé
                         $requete = "INSERT INTO `post-it-partager` (idPostItShare, idPostIt, idUser, datePartage) VALUES (?, ?, ?, NOW())";
                         $statement = $db_connexion->prepare($requete);
@@ -60,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['errors']['insert'] = "Erreur lors de l'insertion du post-it.";
                 header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
             }
-    }elseif ( strlen($title) > 15 && strlen($content) > 150) {
+    }elseif ( strlen($title) > 15 || strlen($content) > 150) {
         $_SESSION['errors']['verification'] = "Erreur : Le titre et le contenu doivent être inférieurs à 15 et 150 caractères respectivement.";
         header('Location: /TER_MIAGE/view/create_post_it_view.php?id=' . $idUser);
         exit();
