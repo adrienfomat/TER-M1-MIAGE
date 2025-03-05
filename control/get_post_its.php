@@ -11,6 +11,7 @@
 
         // Récupération des post-its de l'utilisateur
         $postIts = getPostIts($idUser, $db_connexion);
+        $_SESSION['postIt'] = $postIts; // Je stocke les post-it dans la session pour popuvouis les afficher dans la vue lorsque je clique sur view post-it
 
         foreach ($postIts as $postIt) {
             echo '<div class="post-it1" style="background-color: ' . htmlspecialchars($postIt['couleur']) . '">';

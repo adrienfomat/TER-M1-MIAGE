@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 /* Ici on vérifie si l'id du navigateur est le même que celui dans la session sinon déconnexion */
-if (isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) {
+if ((isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) || !isset($_GET['id']) || empty($_GET['id'])) {
     session_destroy();
     header('Location: /TER_MIAGE/control/deconnexion.php');
     exit();

@@ -83,6 +83,14 @@ function getSharedPostIts($idUser, $db_connexion) {
     return $statement->fetchAll(PDO::FETCH_ASSOC);
 }
 
+/* Fonction pour recuperer les utilisateurs avec lesquels le post-it est partagé */
+function getSharedUsers($idPostIt, $db_connexion) {
+    $sql = "SELECT u.pseudoUser FROM `post-it-partager` p JOIN `user` u ON p.idUser = u.idUser WHERE p.idPostIt = ?";
+    $statement = $db_connexion->prepare($sql);
+    $statement->execute([$idPostIt]);
+    return $statement->fetchAll(PDO::FETCH_COLUMN);
+}
+
 
 
 ?>

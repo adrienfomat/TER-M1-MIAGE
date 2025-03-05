@@ -3,11 +3,8 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once __DIR__ . '/../control/fonction.php'; // Appel des fonctions
-$db_connexion = connexion();
-
 /* Ici on vérifie si l'id du navigateur est le même que celui dans la session sinon déconnexion */
-if ((isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser'])|| !isset($_GET['id']) || empty($_GET['id'])) {
+if ((isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser']) || !isset($_GET['id']) || empty($_GET['id'])) {
     session_destroy();
     header('Location: /TER_MIAGE/control/deconnexion.php');
     exit();
@@ -18,11 +15,10 @@ if ((isset($_GET['id']) && $_GET['id'] != $_SESSION['idUser'])|| !isset($_GET['i
 $postItId = $_GET['idPostIt'] ?? null; // Je récupère l'id du post-it dans l'url
 $postIt = null;
 
-if ($postItId && isset($_SESSION['postIt'])) {
-    foreach ($_SESSION['postIt'] as $p) {
+if ($postItId && isset($_SESSION['postItshared'])) {
+    foreach ($_SESSION['postItshared'] as $p) {
         if ($p['idPostIt'] === $postItId) {
             $postIt = $p;
-            $_SESSION['sharedUsers'] = getSharedUsers($postItId,$db_connexion);// Je récupère les utilisateurs avec lesquels le post-it est partagé
             break;
         }
     }
@@ -40,13 +36,14 @@ if ($postItId && isset($_SESSION['postIt'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>View Post-it</title>
+    <title>View Shared Post-it</title>
 </head>
 <body>
     <div class="left-btn">
     </div> 
 
     <form action="/TER_MIAGE/control/create_post_it.php" method="POST">
+       
         <div class="main-box">
             <div class="box">
                 <div class="titre">
@@ -61,26 +58,7 @@ if ($postItId && isset($_SESSION['postIt'])) {
                     <p class="titre3"><?= htmlspecialchars($postIt['contenuPostIt']) ?></p>
                 <?php
                 } else {
-                    echo '<p>Post-it non trouvé.</p>';
-                }
-                ?>
-
-                <?php
-                if (isset($_SESSION['sharedUsers']) && !empty($_SESSION['sharedUsers'])) {
-                ?>
-                <div class="sharedwith">
-                    <p>Partager avec :</p>
-                </div>
-                <div class="people">
-                <?php
-                    foreach ($_SESSION['sharedUsers'] as $sharedUser) {
-                ?>
-                    <label for="sharedwith" class="user"><?= htmlspecialchars($sharedUser) ?></label>
-                <?php
-                    }
-                ?>
-                </div>
-                <?php
+                    echo '<p>Post-it non trouvée.</p>';
                 }
                 ?>
                 <div class="bottompostit">
@@ -91,5 +69,7 @@ if ($postItId && isset($_SESSION['postIt'])) {
             </div>
         </div>
     </form>
+
+    <p><?=var_dump($postIt);?></p>
 </body>
 </html>

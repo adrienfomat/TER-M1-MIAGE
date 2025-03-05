@@ -1,9 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+-t
 .login-page {
     height: 100vh;
     width: 100vw;
@@ -11,39 +6,28 @@
     align-items: center;
     justify-content: center;
     background-color: #f8f9fa;
-    position: relative;
-}
-
-.login-page {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    position: relative;
-}
-
-.sign-page {
-    height: 90vh;
-    margin-top: 35px;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f8f9fa;
-    position: relative;
 }
 
 .row-page {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
+.login-col {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
+.login-col img {
+    width: 1200px;
+    max-width: 100%;
+    height: 600px;
+}
 
 /* Style du formulaire */
 .login-col-input {
@@ -57,12 +41,12 @@
 
 .login-col-input h1 {
     font-size: 25px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     text-align: center;
 }
 
 .login-col-input h3 {
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
     color: #666;
     margin-bottom: 20px;
@@ -72,7 +56,6 @@
     display: block;
     margin-bottom: 5px;
     font-weight: 400;
-    font-size: 12px;
 }
 
 .login-col-input input {
@@ -88,7 +71,7 @@
 .login-btn {
     width: 100%;
     padding: 10px;
-    background-color: orange;
+    background-color: #25C25A;
     color: white;
     border: none;
     border-radius: 5px;
@@ -98,7 +81,7 @@
 }
 
 .login-btn:hover {
-    background-color: rgba(255, 166, 0, 0.76);
+    background-color: #1ea14a;
 }
 
 /* Lien d'inscription */
@@ -110,7 +93,7 @@
 }
 
 .login-col-input a {
-    color: orange;
+    color: #25C25A;
     font-weight: 500;
     text-decoration: none;
 }
@@ -145,13 +128,13 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .login-btn {
     width: 100%;
-    padding: 9px;
-    background-color: orange;
+    padding: 12px;
+    background-color: #25C25A;
     color: white;
     border: none;
     border-radius: 5px;
@@ -161,569 +144,19 @@
 }
 
 .login-btn:hover {
-    background-color: rgba(255, 166, 0, 0.776);
+    background-color: #1ea14a;
 }
 
 .inscriptionForm {
     display: block;
 }
 
-/* style de la barre de recherche des utilisateurs et de l'afficharge avec qui patager lors de la creation du post it */
-.user-item {
-    padding: 5px;
-    cursor: pointer;
-}
-.user-item:hover {
-    background-color: #f0f0f0;
-}
-.user-list {
-    border: 1px solid #ccc;
-    max-height: 150px;
-    overflow-y: auto;
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 1000;
-}
-.people .user {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-}
-.delete-icon {
-    cursor: pointer;
-    margin-left: 5px;
-    color: red;
-}
-
-/* style de la page d'acceuil et de l'affichage des post it */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: white;
-    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
-    background-size: 20px 20px; 
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh; /
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 8vh;
-    padding: 0 5%;
-}
-
- .colonne-gauche .fa-circle-plus {
-            margin-top: 25px;
-            font-size: 50px;
-            cursor: pointer; 
-            position: relative; 
-            transition: font-size 0.3s ease; 
-            
-        }
-
-        .fa-circle-plus:hover {
-    
-    font-size: 55px;
-}
-
-.fa-circle-plus:hover::after {
-            content: "Ajouter un post-it"; 
-            position: absolute;
-            top: 37%; 
-            left: 300%;
-            transform: translateX(-50%); 
-            background-color: rgba(0, 0, 0, 0.8); 
-            color: white; 
-            padding: 5px 10px; 
-            border-radius: 5px;
-            font-size: 16px; 
-            white-space: nowrap; 
-            opacity: 0; 
-            transition: opacity 0.3s ease; 
-        }
-.fa-solid:hover::after {
-            opacity: 1; 
-        }
-
-.colonne-gauche {
-            flex: 1; 
-            padding: 20px;
-        }
-
-        
-        .separateur {
-            width: 2px; 
-            background-color: #ccc; 
-        }
-
-       
-        .colonne-droite {
-            flex: 1; 
-            
-            padding: 20px;
-
-            position: relative;
-        }
-
-.section {
-    position: relative;
-}
-.section h4 {
-
-    text-align: center;
-    
-    border: 2px solid;
-    background-color: orange;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 6px 6px 6px rgb(119, 118, 118) ;
-    padding: 10px 20px; 
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin-top: -85px;
-   
-  
-}
-.colonne-gauche h4 {
-    padding: 15px 40px; 
-}
-
-.colonne-droite h4 {
-    border: 2px solid;
-    display: inline-block;
-    text-align: center;
-    margin: auto;
-}
-
-.colonne-droite .fa-grip-vertical {
-    position: absolute;
-    top: 60px;
-    left: 90%;
-    font-size: 35px;
-    cursor: pointer;
-}
+/*
+.error{
+background-color: red;
+font-size: 14px;
+color: red;
+margin-top: 5px;
+} */
 
 
-.menu-vertical {
-    position: fixed;
-    top: 15%;
-    right: -300px; 
-    width: 300px;
-    height: 50vh;
-    background-color: #f4f4f4;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    z-index: 1000;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-
-.menu-vertical ul {
-    list-style: none;
-    padding: 20px;
-}
-
-.menu-vertical ul li {
-    margin: 15px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    padding: 10px;
-}
-
-.menu-vertical ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
-
-.menu-vertical li:hover {
-    background-color: #ddd;
-}
-
-
-.menu-vertical.active {
-    right: 0; 
-}
-
-.menu-vertical .fa-solid {
-    padding-right: 10px;
-}
-
-
-
-
-.colonne-gauche .post-it1 {
-    width: calc(45% - 5px); 
-    height: 200px;
-    background-color: yellow;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3),
-                4px 4px 10px rgba(0, 0, 0, 0.2);
-    transform: rotate(1deg);
-    position: relative;
-    box-sizing: border-box; 
-}
-.colonne-gauche .post-it {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    margin-top: 50px; 
-}
-
-.post-it1 h3 {
-    text-align: center;
-}
-
-.post-it .test {
-    background-color: pink;
-}
-
-.post-it .test2 {
-    background-color: rgb(107, 107, 200);
-}
-
-a {
-    text-decoration: none; 
-    color: inherit; 
-}
-
-.post-it1 {
-    position: relative;
-}
-
-.icon {
-    position: absolute;
-    top: 80%;
-    left: 70%;
-
-}
-
-.icon .fa-regular, .fa-solid {
-    cursor: pointer;
-    padding: 3px;
-}
-
-@media (max-width: 1500px) {
-    .colonne-gauche .post-it1{
-        width: calc(50% - 20px);
-        height: 180px;
-    }
-
-    .menu-vertical ul li a {
-        font-size: 13px;
-    }
-
-    .menu-vertical {
-        width: 250px;
-    }
-
-    .post-it1 h3 {
-        text-align: center;
-        font-size: 15px;
-    }
-
-    .post-it1 p {
-        text-align: center;
-        font-size: 11px;
-    }
-
-    .colonne-gauche h4 {
-        font-size: 12px;
-        padding-top:45px;
-        
-    }
-
-    .colonne-droite h4 {
-        font-size: 12px;
-    }
-
-    
-
-
-
-    .colonne-droite .fa-grip-vertical {
-        font-size: 28px;
-    }
-
-    .colonne-gauche .fa-circle-plus{
-        font-size: 40px;
-    }
-
-    .icon .fa-regular, .fa-solid {
-        font-size: 12px;
-    }
-
-
-}
-
-@media (max-width: 1300px){
-    .icon .fa-regular, .fa-solid {
-        font-size: 10px;
-        padding: 2px;
-    }
-}
-
-@media (max-width: 875px){
-    .icon .fa-regular, .fa-solid {
-        font-size: 8px;
-        padding: 2px;
-    }
-}
-
-/* Style de la page de création de post-it */
-
-
-/* Je définis les styles de base pour tous les éléments */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  /* Je définis le style du corps de la page */
-  body {
-    background-color: white;
-    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
-    background-size: 20px 20px;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Je centre la boîte principale */
-  .main-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  /* Je définis le style de la boîte */
-  .box {
-    width: 745.74px;
-    height: 801.32px;
-    background: #ffbdf2;
-    box-shadow: -1px 5px 5px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Je définis le style de l'overlay */
-  .overlay {
-    width: 745.74px;
-    height: 190.26px;
-    position: absolute;
-    top: 0;
-    background: #222222;
-    opacity: 0.06;
-  }
-  
-  /* Je définis le style du titre */
-  .titre {
-    height: 190.26px; 
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  /* Je définis le style du contenu */
-  .contenu {
-    display: flex;
-    align-items: center;
-    height: 300.26px; 
-    padding: 10px 20px;
-  }
-  
-  /* Je définis le style de la section "shared with" */
-  .sharedwith {
-    height: 45.26px;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  /* Je définis le style du bas du post-it */
-  .bottompostit {
-    padding: 160px 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  /* Je définis le style des personnes */
-  .people {
-    padding: 10px 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 45.26px;
-  }
-  
-  /* Je définis le style de l'utilisateur */
-  .user {
-    padding: 5px 19px;
-    background-color: #4caf50;
-    color: white;
-    font-size: 16px;
-    border-radius: 25px; 
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  /* Je définis le style de l'icône de suppression */
-  .delete-icon {
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 1px;
-  }
-  
-  /* Je définis le style de l'icône de suppression au survol */
-  .delete-icon:hover {
-    color: #ff0000;
-  }
-  
-  /* Je définis le style du bouton de sauvegarde */
-  .save-button {
-    bottom: 10px;
-    background-color: white;
-    padding: 5px 15px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Je définis le style de la palette de couleurs */
-  .color-palette {
-    bottom: 10px;
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Je définis le style des couleurs */
-  .color {
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    cursor: pointer;
-    border: 2px solid transparent;
-  }
-  
-  /* Je définis le style des couleurs sélectionnées */
-  .color.selected {
-    border: 2px solid black;
-  }
-  
-  /* Je définis le style du premier titre */
-  .titre1 {
-    font-size: 20px;
-    font-weight: 700;
-  }
-  
-  /* Je définis le style du deuxième titre */
-  .titre2 {
-    display: block;
-    margin-bottom: 10px; 
-    text-align: start;
-    font-size: 20px;
-    font-weight: 700;
-  }
-  
-  /* Je définis le style du contenu */
-  .contenu {
-    display: flex;
-    flex-direction: column; 
-  }
-  
-  /* Je définis le style des textarea dans le contenu */
-  .contenu textarea {
-    width: 100%; 
-  }
-  
-  /* Je définis le style de l'icône de retour */
-  .left-btn .fa-arrow-left {
-    top: 0;
-    left: 0;
-  }
-  
-  /* Je définis le style des textarea */
-  textarea {
-    font-size: 15px;
-  }
-  
-  /* Je définis les styles pour les écrans de moins de 1500px de largeur */
-  @media (max-width: 1500px) {
-    .box {
-      width: 600px;
-      height: 650px;
-    }
-    .color-palette {
-      top: -30%;
-    }
-    .color {
-      width: 15px;
-      height: 17px;
-    }
-    .titre1 {
-      font-size: 12px;
-      font-weight: 700;
-    }
-    p {
-      font-size: 10px;
-    }
-    .titre2 {
-      font-size: 12px;
-      font-weight: 700;
-    }
-    ::placeholder {
-      font-size: 12px;
-    }
-  }
-  
-  /* Je définis le style des liens */
-  a {
-    text-decoration: none;
-  }
-  
-  /* Je définis le style du bouton de fermeture */
-  .closebt {
-    padding: 10px 10px;
-    background-color: white;
-    text-decoration: none;
-    color: black;
-    text-decoration-line: none;
-    border-radius: 5px;
-  }
-  
-  /* Je définis le style du troisième titre */
-  .titre3 {
-    text-align: justify;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 13px;
-  }

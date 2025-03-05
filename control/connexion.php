@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['prenomUser'] = $user['prenomUser'];
 
                 //On recupere les post-it de l'utilisateur
-                $_SESSION['postIt'] = getPostIts($user['idUser'], $db_connexion);
-                
+           //$_SESSION['postIt'] = getPostIts($user['idUser'], $db_connexion);     
+
                 // Redirection vers la page d'accueil
                 header('Location: /TER_MIAGE/view/home_post_it_view.php?id=' . $user['idUser']);
                 exit();
@@ -54,6 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: /TER_MIAGE/view/connexion_view.php');
     exit();
 } else {
-    echo "<p>Aucune donnée reçue.</p>";
+   // echo "<p>Aucune donnée reçue.</p>";
 }
 ?>
